@@ -634,7 +634,7 @@ const FrameComponent = () => {
             . . .
           </div>
           <div className="absolute top-[75.94px] left-[25.31px] inline-block w-[274px] [transform:_rotate(3deg)] [transform-origin:0_0]">
-            User research helps you to create an optimal product for users.
+            User research helps you to create an optimal product for users
           </div>
           <div className="absolute top-[21.02px] left-[28.19px] w-[39px] h-[23px] [transform:_rotate(3deg)] [transform-origin:0_0] text-lightcoral-100">
             <div className="absolute top-[0px] left-[0px] rounded bg-lightcoral-200 w-[39px] h-[23px] [transform:_rotate(3deg)] [transform-origin:0_0]" />
