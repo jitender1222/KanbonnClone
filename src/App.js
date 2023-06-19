@@ -1,52 +1,22 @@
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
-import FrameComponent from "./pages/FrameComponent";
-import { useEffect } from "react";
+import MainContent from "./components/MainContent";
+import MainHeader from "./components/MainHeader";
+import SideDrawer from "./components/SideDrawer";
+
+import styles from "./layout.module.css";
 
 function App() {
-  const action = useNavigationType();
-  const location = useLocation();
-  const pathname = location.pathname;
-
-  useEffect(() => {
-    if (action !== "POP") {
-      window.scrollTo(0, 0);
-    }
-  }, [action, pathname]);
-
-  useEffect(() => {
-    let title = "";
-    let metaDescription = "";
-
-    switch (pathname) {
-      case "/":
-        title = "";
-        metaDescription = "";
-        break;
-    }
-
-    if (title) {
-      document.title = title;
-    }
-
-    if (metaDescription) {
-      const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]'
-      );
-      if (metaDescriptionTag) {
-        metaDescriptionTag.content = metaDescription;
-      }
-    }
-  }, [pathname]);
-
+  console.log(process.env.REACT_APP_BASE_URL);
   return (
-    <Routes>
-      <Route path="/" element={<FrameComponent />} />
-    </Routes>
+    <div className={styles.container}>
+      <section className={styles.leftContainer}>
+        <SideDrawer />
+      </section>
+      <section className={styles.rightContainer}>
+        <MainHeader />
+        <MainContent />
+      </section>
+    </div>
   );
 }
+
 export default App;
